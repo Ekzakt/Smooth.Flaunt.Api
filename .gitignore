@@ -363,3 +363,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
+/Smooth.Flaunt.Api/appsettings.Development.json
