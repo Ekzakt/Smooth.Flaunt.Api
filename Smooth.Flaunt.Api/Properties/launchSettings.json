@@ -9,7 +9,7 @@
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5148"
     },
-    "https": {
+    "Flaunt.Api": {
       "commandName": "Project",
       "launchUrl": "index.html",
       "launchBrowser": true,
