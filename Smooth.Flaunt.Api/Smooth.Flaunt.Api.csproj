@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<Version>0.0.0</Version>
+		<ApplicationInsightsResourceId>/subscriptions/c7f11884-7c7c-4880-9036-44c8baccd1d5/resourceGroups/rg-EkzaktDemos/providers/microsoft.insights/components/appi-Smooth-Api</ApplicationInsightsResourceId>
+		<UserSecretsId>ff74e98b-6deb-4bf8-a2f5-21088ace9bb1</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+		<PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.3.1" />
+		<PackageReference Include="Azure.Identity" Version="1.11.4" />
+		<PackageReference Include="Azure.Monitor.OpenTelemetry.AspNetCore" Version="1.2.0" />
+		<PackageReference Include="Azure.Storage.Blobs" Version="12.20.0" />
+		<PackageReference Include="Ekzakt.EmailSender.Smtp" Version="0.2.9" />
+		<PackageReference Include="Ekzakt.Utilities" Version="0.2.25" />
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Azure" Version="1.7.3" />
+		<PackageReference Include="Microsoft.Identity.Web" Version="2.19.1" />
+		<PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="8.0.1" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.Seq" Version="8.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Smooth.Shared\Smooth.Shared.csproj" />
+	  <ProjectReference Include="..\Smooth.Flaunt.Api.Application\Smooth.Flaunt.Api.Application.csproj" />
+	  <ProjectReference Include="..\Smooth.Flaunt.Api.Infrastructure\Smooth.Flaunt.Api.Infrastructure.csproj" />
+	</ItemGroup>
+
+</Project>
