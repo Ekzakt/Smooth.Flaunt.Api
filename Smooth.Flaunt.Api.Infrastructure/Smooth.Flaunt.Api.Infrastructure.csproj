@@ -14,7 +14,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Smooth.Shared\Smooth.Shared.csproj" />
 	  <ProjectReference Include="..\Smooth.Flaunt.Api.Application\Smooth.Flaunt.Api.Application.csproj" />
 	</ItemGroup>
 
