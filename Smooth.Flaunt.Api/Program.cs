@@ -6,8 +6,8 @@ using Smooth.Flaunt.Api.Configuration;
 using Smooth.Flaunt.Api.Hubs;
 using Smooth.Flaunt.Api.Infrastructure.Configuration;
 using Smooth.Flaunt.Api.Infrastructure.WeatherForecasts;
-using Smooth.Shared.Configurations.Options;
-using Smooth.Shared.Endpoints;
+using Smooth.Flaunt.Shared.Configurations.Options;
+using Smooth.Flaunt.Shared.Endpoints;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);

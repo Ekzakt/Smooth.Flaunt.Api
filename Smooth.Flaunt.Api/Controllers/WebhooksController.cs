@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Smooth.Shared.Endpoints;
+using Smooth.Flaunt.Shared.Endpoints;
 
 namespace Smooth.Flaunt.Api.Controllers;
 

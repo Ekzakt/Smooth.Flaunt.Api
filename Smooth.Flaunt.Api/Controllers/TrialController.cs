@@ -5,9 +5,9 @@ using Ekzakt.Utilities.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Smooth.Flaunt.Api.Hubs;
-using Smooth.Shared.Endpoints;
-using Smooth.Shared.Models.Requests;
-using Smooth.Shared.Models.Responses;
+using Smooth.Flaunt.Shared.Endpoints;
+using Smooth.Flaunt.Shared.Models.Requests;
+using Smooth.Flaunt.Shared.Models.Responses;
 
 namespace Smooth.Flaunt.Api.Controllers;
 

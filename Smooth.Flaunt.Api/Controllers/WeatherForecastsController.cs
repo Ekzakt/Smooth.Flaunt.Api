@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Smooth.Flaunt.Api.Application.WeatherForecasts;
-using Smooth.Shared.Endpoints;
+using Smooth.Flaunt.Shared.Endpoints;
 
 namespace Smooth.Flaunt.Api.Controllers
 {

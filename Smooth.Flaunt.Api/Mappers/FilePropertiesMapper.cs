@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Ekzakt.FileManager.Core.Models;
-using Smooth.Shared.Models;
+using Smooth.Flaunt.Shared.Models.Dtos;
 
 namespace Smooth.Flaunt.Api.Mappers;
 

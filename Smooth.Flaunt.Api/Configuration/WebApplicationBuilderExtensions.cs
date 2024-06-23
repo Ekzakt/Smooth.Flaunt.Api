@@ -9,9 +9,9 @@ using Microsoft.Extensions.Azure;
 using Microsoft.Identity.Web;
 using Smooth.Flaunt.Api.Configuration;
 using Smooth.Flaunt.Api.Hubs;
-using Smooth.Shared.Configurations.Options;
-using Smooth.Shared.Configurations.Options.Azure;
-using Smooth.Shared.Configurations.Options.MediaFiles;
+using Smooth.Flaunt.Shared.Configurations.Options;
+using Smooth.Flaunt.Shared.Configurations.Options.Azure;
+using Smooth.Flaunt.Shared.Configurations.Options.MediaFiles;
 
 namespace Smooth.Flaunt.Api.Configuration;
 

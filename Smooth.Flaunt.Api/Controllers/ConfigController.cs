@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Smooth.Flaunt.Api.Application.Configuration;
-using Smooth.Shared.Configurations.Options.MediaFiles;
-using Smooth.Shared.Endpoints;
+using Smooth.Flaunt.Shared.Configurations.Options.MediaFiles;
+using Smooth.Flaunt.Shared.Endpoints;
 
 namespace Smooth.Flaunt.Api.Controllers
 {
