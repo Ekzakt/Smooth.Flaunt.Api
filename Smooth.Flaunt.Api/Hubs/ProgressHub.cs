@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-using Smooth.Shared.Models.HubMessages;
+using Smooth.Flaunt.Shared.Models.HubMessages;
 
 namespace Smooth.Flaunt.Api.Hubs;
 

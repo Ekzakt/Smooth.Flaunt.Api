@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Options;
 using Smooth.Flaunt.Api.Application.Configuration;
-using Smooth.Shared.Configurations;
-using Smooth.Shared.Configurations.Options;
-using Smooth.Shared.Configurations.Options.Azure;
-using Smooth.Shared.Configurations.Options.MediaFiles;
+using Smooth.Flaunt.Shared.Configurations;
+using Smooth.Flaunt.Shared.Configurations.Options;
+using Smooth.Flaunt.Shared.Configurations.Options.Azure;
+using Smooth.Flaunt.Shared.Configurations.Options.MediaFiles;
 
 namespace Smooth.Flaunt.Api.Infrastructure.Configuration;
 

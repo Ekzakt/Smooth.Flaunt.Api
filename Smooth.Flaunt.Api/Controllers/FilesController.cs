@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Net.Http.Headers;
 using Smooth.Flaunt.Api.Hubs;
 using Smooth.Flaunt.Api.Utilities;
-using Smooth.Shared.Endpoints;
-using Smooth.Shared.Models;
-using Smooth.Shared.Models.HubMessages;
-using Smooth.Shared.Models.Requests;
-using Smooth.Shared.Models.Responses;
+using Smooth.Flaunt.Shared.Endpoints;
+using Smooth.Flaunt.Shared.Models.Dtos;
+using Smooth.Flaunt.Shared.Models.HubMessages;
+using Smooth.Flaunt.Shared.Models.Requests;
+using Smooth.Flaunt.Shared.Models.Responses;
 using System.Text.Json;
 using System.Web;
 
