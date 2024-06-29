@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Smooth.Flaunt.Api.Application.Configuration;
 using Smooth.Flaunt.Shared.Configurations.Options.MediaFiles;
 using Smooth.Flaunt.Shared.Endpoints;
@@ -20,6 +21,7 @@ namespace Smooth.Flaunt.Api.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         [Route(Routes.GET_MEDIAFILES_OPTIONS)]
         public async Task<IActionResult> GetMediaFilesOptionsAsync()
         {

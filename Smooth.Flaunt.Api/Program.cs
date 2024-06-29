@@ -1,5 +1,6 @@
 using Ekzakt.EmailSender.Smtp.Configuration;
 using Ekzakt.FileManager.AzureBlob.Configuration;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Smooth.Flaunt.Api.Application.Configuration;
 using Smooth.Flaunt.Api.Application.WeatherForecasts;
 using Smooth.Flaunt.Api.Configuration;
@@ -19,12 +20,36 @@ var builder = WebApplication.CreateBuilder(args);
 //    .WriteTo.Console()
 //    .CreateBootstrapLogger();
 
+// EJ
+//builder.Services.AddAuthentication();
+
+// Begin EJ
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        // base-address of your identityserver
+        options.Authority = "https://localhost:5001";
+
+        // audience is optional, make sure you read the following paragraphs
+        // to understand your options
+        options.TokenValidationParameters.ValidateAudience = false;
+
+        // it's recommended to check the type header to avoid "JWT confusion" attacks
+        options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
+        //options.Audience = "smooth.flaunt.api";
+    });
+builder.Services.AddAuthorization();
+// End EJ
+
 builder.AddSwaggerGen();
 builder.AddResponseSizeCompression();
 builder.AddConfigurationOptions();
 builder.AddAzureClientServices();
 builder.AddAzureKeyVault();
+
 //builder.AddAuthentication();
+
+
 builder.AddCors();
 builder.AddAzureSignalR();
 //builder.AddApplicationInsights();
@@ -46,9 +71,13 @@ app.UseCors(CorsOptions.POLICY_NAME);
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseResponseSizeCompression();
-//app.UseAuthentication();
-//app.UseAuthorization();
-app.MapControllers();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers()
+   .RequireAuthorization();
+
 app.MapHub<NotificationsHub>(Hubs.NOTIFICATIONS_HUB);
 app.MapHub<ProgressHub>(Hubs.PROGRESS_HUB);
 
