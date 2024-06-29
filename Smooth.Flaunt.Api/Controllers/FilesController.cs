@@ -29,7 +29,7 @@ public class FilesController(
     : ControllerBase
 {
     [HttpGet]
-    [Route(Routes.GET_FILES_LIST)]
+    [Route(Routes.GET_FILES)]
     public async Task<IActionResult> GetFilesListAsync(CancellationToken cancellationToken)
     {
         var result = await _fileMananager.ListFilesAsync(new ListFilesRequest(), cancellationToken);
