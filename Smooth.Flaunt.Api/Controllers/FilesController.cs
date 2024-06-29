@@ -3,6 +3,7 @@ using Ekzakt.FileManager.Core.Contracts;
 using Ekzakt.FileManager.Core.Models.EventArgs;
 using Ekzakt.FileManager.Core.Models.Requests;
 using Ekzakt.FileManager.Core.Models.Responses;
+using Ekzakt.Utilities.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.WebUtilities;
@@ -85,7 +86,7 @@ public class FilesController(
         }
         else
         {
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
     }
 
@@ -106,7 +107,7 @@ public class FilesController(
         {
             throw new InvalidDataException($"{nameof(httpRequest.ContentType)} is null.");
         }
-
+        
         var boundary = GetMultipartBoundary(MediaTypeHeaderValue.Parse(contentType));
         var multipartReader = new MultipartReader(boundary, httpRequest.Body);
         var saveFileRequest = new SaveFileRequest();
@@ -123,7 +124,8 @@ public class FilesController(
                 var jsonString = await section.ReadAsStringAsync(cancellationToken);
                 var jsonContent = JsonSerializer.Deserialize<SaveFileFormContentRequest>(jsonString, jsonOptions);
 
-                saveFileRequest.ContentType = jsonContent!.FileContentType;
+                saveFileRequest.FileName = $"{jsonContent!.Id}.jpg";
+                saveFileRequest.ContentType = jsonContent!.ContentType;
                 saveFileRequest.InitialFileSize = jsonContent!.InitialFileSize;
             }
             else if (contentDisposition!.IsFileDisposition())
