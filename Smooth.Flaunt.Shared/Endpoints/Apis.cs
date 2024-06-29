@@ -2,5 +2,5 @@
 
 public static class Apis
 {
-    public const string API = "/api";
+    public const string API = "";
 }

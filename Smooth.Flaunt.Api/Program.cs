@@ -20,8 +20,6 @@ var builder = WebApplication.CreateBuilder(args);
 //    .WriteTo.Console()
 //    .CreateBootstrapLogger();
 
-// EJ
-//builder.Services.AddAuthentication();
 
 // Begin EJ
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -29,6 +27,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         // base-address of your identityserver
         options.Authority = "https://localhost:5001";
+        options.Audience = "flauntapi";
 
         // audience is optional, make sure you read the following paragraphs
         // to understand your options
@@ -36,7 +35,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
         // it's recommended to check the type header to avoid "JWT confusion" attacks
         options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
-        //options.Audience = "smooth.flaunt.api";
+
     });
 builder.Services.AddAuthorization();
 // End EJ
@@ -47,7 +46,6 @@ builder.AddConfigurationOptions();
 builder.AddAzureClientServices();
 builder.AddAzureKeyVault();
 
-//builder.AddAuthentication();
 
 
 builder.AddCors();
