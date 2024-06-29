@@ -63,18 +63,15 @@ public class FilesController(
     }
 
 
-
     [HttpPost]
     [Route(Routes.POST_FILE)]
     public async Task<IActionResult> SaveFileAsync(IFormFile file, Guid id, CancellationToken cancellationToken)
     {
-        var fileGuid = Guid.NewGuid();
-
         using var fileStream = file.OpenReadStream();
 
         var request = new SaveFileRequest
         {
-            FileName = $"{fileGuid}.jpg",
+            FileName = $"{id}.jpg",
             FileStream = fileStream,
             ProgressHandler = GetSaveFileProgressHandler(id),
             InitialFileSize = fileStream.Length
@@ -84,7 +81,7 @@ public class FilesController(
 
         if (result.IsSuccess())
         {
-            return Ok(new PostFileResponse { FileId = fileGuid });
+            return Ok(new PostFileResponse { FileId = id });
         }
         else
         {
