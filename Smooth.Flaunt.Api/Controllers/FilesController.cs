@@ -130,10 +130,8 @@ public class FilesController(
             }
             else if (contentDisposition!.IsFileDisposition())
             {
-                saveFileRequest.FileName = contentDisposition!.FileName.Value ?? string.Empty;
                 saveFileRequest.FileStream = section.Body;
                 saveFileRequest.ProgressHandler = GetSaveFileProgressHandler(Guid.NewGuid());
-
                 result = await _fileMananager.SaveFileAsync(saveFileRequest, cancellationToken);
             }
             else
@@ -146,9 +144,7 @@ public class FilesController(
 
         return new HttpResponseMessage(result.Status);
     }
-
-
-
+    
 
     #region Helpers
 
