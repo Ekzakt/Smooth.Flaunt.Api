@@ -26,7 +26,7 @@ public static class Routes
     //FilesController
     public const string GET_FILES = "";
     public const string DELETE_FILE = "";
-    public const string POST_FILE = "file";
+    public const string POST_FILE = "";
     public const string POST_FILE_STREAM = "stream";
 
 

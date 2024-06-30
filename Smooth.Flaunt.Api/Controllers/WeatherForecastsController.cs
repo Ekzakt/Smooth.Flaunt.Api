@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Smooth.Flaunt.Api.Application.WeatherForecasts;
 using Smooth.Flaunt.Shared.Endpoints;
@@ -6,6 +7,7 @@ namespace Smooth.Flaunt.Api.Controllers
 {
     [ApiController]
     [Route(Ctrls.WEATERFORECASTS)]
+    [AllowAnonymous]
     public class WeatherForecastsController(
         IWeatherForecastService _weatherForecastService)
         : ControllerBase

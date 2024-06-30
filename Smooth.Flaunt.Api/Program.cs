@@ -46,8 +46,6 @@ builder.AddConfigurationOptions();
 builder.AddAzureClientServices();
 builder.AddAzureKeyVault();
 
-
-
 builder.AddCors();
 builder.AddAzureSignalR();
 //builder.AddApplicationInsights();
