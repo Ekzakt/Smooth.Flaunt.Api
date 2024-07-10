@@ -69,7 +69,7 @@ public class WeatherForecastService
     {
         var output = rowCount.GetValueOrDefault(10);
 
-        output = output <= 1 ? 10 : output;
+        output = output <= 0 ? 10 : output;
 
         return output;
     }

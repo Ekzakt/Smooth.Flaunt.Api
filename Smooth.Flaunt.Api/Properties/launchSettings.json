@@ -12,7 +12,7 @@
     "Flaunt.Api": {
       "commandName": "Project",
       "launchUrl": "index.html",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
