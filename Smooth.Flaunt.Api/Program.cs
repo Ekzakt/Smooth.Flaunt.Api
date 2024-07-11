@@ -1,6 +1,7 @@
 using Ekzakt.EmailSender.Smtp.Configuration;
 using Ekzakt.FileManager.AzureBlob.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Smooth.Flaunt.Api.Application.Configuration;
 using Smooth.Flaunt.Api.Application.WeatherForecasts;
 using Smooth.Flaunt.Api.Configuration;
@@ -20,18 +21,21 @@ var builder = WebApplication.CreateBuilder(args);
 //    .WriteTo.Console()
 //    .CreateBootstrapLogger();
 
-
 // Begin EJ
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         // base-address of your identityserver
         options.Authority = builder.Configuration.GetValue<string>("IdentityServer:BaseUri");
-        options.Audience = "flauntapi";
+        options.Audience = "Flaunt.Api";
 
         // audience is optional, make sure you read the following paragraphs
-        // to understand your options
-        options.TokenValidationParameters.ValidateAudience = false;
+        // to understand your options.
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = true, // Ensure audience validation is enabled
+            ValidAudience = "Flaunt.Api"  // Ensure the expected audience matches
+        };
 
         // it's recommended to check the type header to avoid "JWT confusion" attacks
         options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
