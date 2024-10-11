@@ -7,7 +7,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5148"
+      "applicationUrl": "http://api.smooth.local:5148"
     },
     "Flaunt.Api": {
       "commandName": "Project",
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7084;http://localhost:5148"
+      "applicationUrl": "https://flaunt.api.smooth.local:7084"
     },
     "IIS Express": {
       "commandName": "IISExpress",

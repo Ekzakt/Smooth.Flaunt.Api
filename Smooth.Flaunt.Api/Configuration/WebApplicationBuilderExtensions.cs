@@ -117,13 +117,11 @@ public static class WebApplicationBuilderExtensions
 
     public static WebApplicationBuilder AddSwaggerGen(this WebApplicationBuilder builder)
     {
-        // TODO: Fix this for production.
-        //if (!builder.Environment.IsProduction())
-        //{
-        //    builder.Services.AddSwaggerGen();
-        //}
+        if (builder.Environment.IsProduction())
+        {
+            return builder;
+        }
 
-        //builder.Services.AddSwaggerGen();
 
         builder.Services.AddSwaggerGen(opt =>
         {

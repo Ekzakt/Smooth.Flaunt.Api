@@ -8,6 +8,8 @@
 		<Version>0.0.0</Version>
 		<ApplicationInsightsResourceId>/subscriptions/c7f11884-7c7c-4880-9036-44c8baccd1d5/resourceGroups/rg-EkzaktDemos/providers/microsoft.insights/components/appi-Smooth-Api</ApplicationInsightsResourceId>
 		<UserSecretsId>ff74e98b-6deb-4bf8-a2f5-21088ace9bb1</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>.</DockerfileContext>
 	</PropertyGroup>
 
 	<ItemGroup>
